@@ -21,29 +21,22 @@ module.exports = function(grunt) {
 			dist: 'dist',
 			test: 'test'
 		},
-		// Empties folders to start fresh
-		/*clean: {
-			dist: {
-				files: [{
-					dot: true,
-					src: [
-						'.tmp',
-						'<%= pic.dist %>/*',
-						'!<%= pic.dist %>/.git*'
-					]
-				}]
-			},
-			server: '.tmp'
-		},*/
-
 		 uglify: {
 		     options: {
 		         // The banner is inserted at the top of the output
 		         banner: '/*! <%= pkg.name %> <%= grunt.template.today("dd-mm-yyyy") %> */\n'
 		     },
-		     dist: { // Target
+		     dist: {
 		         files: { // Dictionary of files
 		             'dist/js/<%= pkg.name %>.min.js': ['src/js/*.js']
+		         }
+		     },
+		     beaut: {
+				  options: {
+					beautify: true
+				  },
+		         files: { // Dictionary of files
+		             'dist/js/<%= pkg.name %>.js': ['src/js/*.js']
 		         }
 		     }
 		 },
@@ -68,7 +61,9 @@ module.exports = function(grunt) {
 			dist: {
 				src: ['<%= pic.app %>/js/*.js'],
 				options: {
-					destination: '<%= pic.dist %>/doc'
+          			configure: './jsdoc.conf.json',
+					destination: '<%= pic.dist %>/doc',
+					template : "node_modules/ink-docstrap/template"
 				}
 			}
 		},
