@@ -19,6 +19,7 @@ module.exports = function(grunt) {
 			// Configurable paths
 			app: 'src',
 			dist: 'dist',
+			doc: 'doc',
 			test: 'test'
 		},
 		 uglify: {
@@ -62,7 +63,7 @@ module.exports = function(grunt) {
 				src: ['<%= pic.app %>/js/*.js'],
 				options: {
           			configure: './jsdoc.conf.json',
-					destination: '<%= pic.dist %>/doc',
+					destination: '<%= pic.doc %>',
 					template : "node_modules/ink-docstrap/template"
 				}
 			}
