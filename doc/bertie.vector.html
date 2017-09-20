@@ -4,7 +4,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width">
-	<title>bertie.vector Class: bertievector</title>
+	<title>bertie.vector Class: vector</title>
 
 	<!--[if lt IE 9]>
 	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -31,9 +31,16 @@
 		<ul class="nav navbar-nav">
 			
 			<li class="dropdown">
+				<a href="namespaces.list.html" class="dropdown-toggle" data-toggle="dropdown">Namespaces<b class="caret"></b></a>
+				<ul class="dropdown-menu ">
+					<li><a href="bertie.html">bertie</a></li>
+				</ul>
+			</li>
+			
+			<li class="dropdown">
 				<a href="classes.list.html" class="dropdown-toggle" data-toggle="dropdown">Classes<b class="caret"></b></a>
 				<ul class="dropdown-menu ">
-					<li><a href="bertievector.html">bertievector</a></li>
+					<li><a href="bertie.vector.html">bertie.vector</a></li>
 				</ul>
 			</li>
 			
@@ -65,13 +72,15 @@
 		<div id="main">
 			
 
-	<h1 class="page-title">Class: bertievector</h1>
+	<h1 class="page-title">Class: vector</h1>
 <section>
 
 <header>
     
         <h2>
-        bertievector
+            <span class="ancestors"><a href="bertie.html">bertie</a>.</span>
+        
+        vector
         </h2>
         
     
@@ -84,7 +93,7 @@
         
 <hr>
 <dt>
-    <h4 class="name" id="bertievector"><span class="type-signature"></span>new bertievector(args)</h4>
+    <h4 class="name" id="vector"><span class="type-signature"></span>new vector(x, y, z)</h4>
     
     
 </dt>
@@ -92,7 +101,7 @@
 
     
     <div class="description">
-        <p>bertie.vector - Attached bertievector to the bertie class</p>
+        <p>Class defining a vector in 3D space</p>
     </div>
     
 
@@ -115,7 +124,109 @@
         <th>Type</th>
 
         
-        <th>Argument</th>
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>x</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">float</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>x direction coordinate</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>y</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">float</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>y direction coordinate</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>z</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">float</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>z direction coordinate</p></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+    <h5 class="subsection-title">Properties:</h5>
+
+    <dl>
+
+<table class="props table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
         
 
         
@@ -129,13 +240,13 @@
 
         <tr>
             
-                <td class="name"><code>args</code></td>
+                <td class="name"><code>x</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type">array</span>
+<span class="param-type">float</span>
 
 
 
@@ -143,30 +254,65 @@
             </td>
 
             
-                <td class="attributes">
-                
 
-                
+            
 
+            <td class="description last"><p>x axis travel (signed)</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>y</code></td>
+            
+
+            <td class="type">
+            
                 
-                    &lt;repeatable><br>
-                
-                </td>
+<span class="param-type">float</span>
+
+
+
+            
+            </td>
+
             
 
             
 
-            <td class="description last"><p>[x,y,z] direction coordinates</p></td>
+            <td class="description last"><p>y axis travel (signed)</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>z</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">float</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>z axis travel (signed)</p></td>
         </tr>
 
     
     </tbody>
 </table>
+</dl>
 
-    
-
-    
-<dl class="details">
     
 
 	
@@ -208,7 +354,7 @@
 		<ul class="dummy">
 			<li>
 				<a href="bertie-vector.js.html">bertie-vector.js</a>,
-				 <a href="bertie-vector.js.html#sunlight-1-line-15">line 15</a>
+				 <a href="bertie-vector.js.html#sunlight-1-line-24">line 24</a>
 			</li>
 		</ul>
 	</dd>
@@ -259,7 +405,7 @@
             
 <hr>
 <dt>
-    <h4 class="name" id="add"><span class="type-signature"></span>add(x, y, z)</h4>
+    <h4 class="name" id="add"><span class="type-signature"></span>add(x|vector, y, z)</h4>
     
     
 </dt>
@@ -302,13 +448,16 @@
 
         <tr>
             
-                <td class="name"><code>x</code></td>
+                <td class="name"><code>x|vector</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type">int</span>
+<span class="param-type">float</span>
+|
+
+<span class="param-type">vector</span>
 
 
 
@@ -319,7 +468,7 @@
 
             
 
-            <td class="description last"><p>x direction</p></td>
+            <td class="description last"><p>x direction or another vector</p></td>
         </tr>
 
     
@@ -332,7 +481,7 @@
             <td class="type">
             
                 
-<span class="param-type">int</span>
+<span class="param-type">float</span>
 
 
 
@@ -343,7 +492,7 @@
 
             
 
-            <td class="description last"><p>y direction</p></td>
+            <td class="description last"><p>y direction (if x is not a vector)</p></td>
         </tr>
 
     
@@ -356,7 +505,7 @@
             <td class="type">
             
                 
-<span class="param-type">int</span>
+<span class="param-type">float</span>
 
 
 
@@ -367,7 +516,7 @@
 
             
 
-            <td class="description last"><p>z direction</p></td>
+            <td class="description last"><p>z direction (if x is not a vector)</p></td>
         </tr>
 
     
@@ -412,7 +561,7 @@
 		<ul class="dummy">
 			<li>
 				<a href="bertie-vector.js.html">bertie-vector.js</a>,
-				 <a href="bertie-vector.js.html#sunlight-1-line-41">line 41</a>
+				 <a href="bertie-vector.js.html#sunlight-1-line-63">line 63</a>
 			</li>
 		</ul>
 	</dd>
@@ -445,7 +594,7 @@
             
 <hr>
 <dt>
-    <h4 class="name" id="angleBetween"><span class="type-signature"></span>angleBetween(v)</h4>
+    <h4 class="name" id="angleBetween"><span class="type-signature"></span>angleBetween(vector)</h4>
     
     
 </dt>
@@ -488,7 +637,7 @@
 
         <tr>
             
-                <td class="name"><code>v</code></td>
+                <td class="name"><code>vector</code></td>
             
 
             <td class="type">
@@ -505,7 +654,7 @@
 
             
 
-            <td class="description last"><p>Expects another Vector</p></td>
+            <td class="description last"><p>bertie.vector object</p></td>
         </tr>
 
     
@@ -550,7 +699,7 @@
 		<ul class="dummy">
 			<li>
 				<a href="bertie-vector.js.html">bertie-vector.js</a>,
-				 <a href="bertie-vector.js.html#sunlight-1-line-98">line 98</a>
+				 <a href="bertie-vector.js.html#sunlight-1-line-132">line 132</a>
 			</li>
 		</ul>
 	</dd>
@@ -630,52 +779,6 @@
 
     
     
-        <h5>Parameters:</h5>
-        
-
-<table class="params table table-striped">
-    <thead>
-    <tr>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">vector</span>
-
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>The clone vector</p></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-    
 
     
 <dl class="details">
@@ -713,7 +816,7 @@
 		<ul class="dummy">
 			<li>
 				<a href="bertie-vector.js.html">bertie-vector.js</a>,
-				 <a href="bertie-vector.js.html#sunlight-1-line-148">line 148</a>
+				 <a href="bertie-vector.js.html#sunlight-1-line-187">line 187</a>
 			</li>
 		</ul>
 	</dd>
@@ -738,6 +841,32 @@
     
 
     
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    <ul>
+<li>The cloned vector</li>
+</ul>
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">vector</span>
+
+
+
+    </dd>
+</dl>
+
+
+        
 
     
 </dd>
@@ -746,7 +875,7 @@
             
 <hr>
 <dt>
-    <h4 class="name" id="dotProduct"><span class="type-signature"></span>dotProduct(v)</h4>
+    <h4 class="name" id="dotProduct"><span class="type-signature"></span>dotProduct(vector)</h4>
     
     
 </dt>
@@ -789,7 +918,7 @@
 
         <tr>
             
-                <td class="name"><code>v</code></td>
+                <td class="name"><code>vector</code></td>
             
 
             <td class="type">
@@ -806,7 +935,7 @@
 
             
 
-            <td class="description last"><p>Expects another Vector</p></td>
+            <td class="description last"><p>bertie.vector object</p></td>
         </tr>
 
     
@@ -851,7 +980,7 @@
 		<ul class="dummy">
 			<li>
 				<a href="bertie-vector.js.html">bertie-vector.js</a>,
-				 <a href="bertie-vector.js.html#sunlight-1-line-74">line 74</a>
+				 <a href="bertie-vector.js.html#sunlight-1-line-106">line 106</a>
 			</li>
 		</ul>
 	</dd>
@@ -962,7 +1091,7 @@
 		<ul class="dummy">
 			<li>
 				<a href="bertie-vector.js.html">bertie-vector.js</a>,
-				 <a href="bertie-vector.js.html#sunlight-1-line-86">line 86</a>
+				 <a href="bertie-vector.js.html#sunlight-1-line-121">line 121</a>
 			</li>
 		</ul>
 	</dd>
@@ -1050,7 +1179,7 @@
 		<ul class="dummy">
 			<li>
 				<a href="bertie-vector.js.html">bertie-vector.js</a>,
-				 <a href="bertie-vector.js.html#sunlight-1-line-52">line 52</a>
+				 <a href="bertie-vector.js.html#sunlight-1-line-83">line 83</a>
 			</li>
 		</ul>
 	</dd>
@@ -1103,7 +1232,7 @@
             
 <hr>
 <dt>
-    <h4 class="name" id="rotateX"><span class="type-signature"></span>rotateX(a)</h4>
+    <h4 class="name" id="rotateX"><span class="type-signature"></span>rotateX(angle)</h4>
     
     
 </dt>
@@ -1146,13 +1275,13 @@
 
         <tr>
             
-                <td class="name"><code>a</code></td>
+                <td class="name"><code>angle</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type">angle</span>
+<span class="param-type">float</span>
 
 
 
@@ -1208,7 +1337,7 @@
 		<ul class="dummy">
 			<li>
 				<a href="bertie-vector.js.html">bertie-vector.js</a>,
-				 <a href="bertie-vector.js.html#sunlight-1-line-109">line 109</a>
+				 <a href="bertie-vector.js.html#sunlight-1-line-145">line 145</a>
 			</li>
 		</ul>
 	</dd>
@@ -1241,7 +1370,7 @@
             
 <hr>
 <dt>
-    <h4 class="name" id="rotateY"><span class="type-signature"></span>rotateY(a)</h4>
+    <h4 class="name" id="rotateY"><span class="type-signature"></span>rotateY(angle)</h4>
     
     
 </dt>
@@ -1284,13 +1413,13 @@
 
         <tr>
             
-                <td class="name"><code>a</code></td>
+                <td class="name"><code>angle</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type">angle</span>
+<span class="param-type">float</span>
 
 
 
@@ -1346,7 +1475,7 @@
 		<ul class="dummy">
 			<li>
 				<a href="bertie-vector.js.html">bertie-vector.js</a>,
-				 <a href="bertie-vector.js.html#sunlight-1-line-122">line 122</a>
+				 <a href="bertie-vector.js.html#sunlight-1-line-159">line 159</a>
 			</li>
 		</ul>
 	</dd>
@@ -1379,7 +1508,7 @@
             
 <hr>
 <dt>
-    <h4 class="name" id="rotateZ"><span class="type-signature"></span>rotateZ(a)</h4>
+    <h4 class="name" id="rotateZ"><span class="type-signature"></span>rotateZ(angle)</h4>
     
     
 </dt>
@@ -1422,13 +1551,13 @@
 
         <tr>
             
-                <td class="name"><code>a</code></td>
+                <td class="name"><code>angle</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type">angle</span>
+<span class="param-type">float</span>
 
 
 
@@ -1484,7 +1613,7 @@
 		<ul class="dummy">
 			<li>
 				<a href="bertie-vector.js.html">bertie-vector.js</a>,
-				 <a href="bertie-vector.js.html#sunlight-1-line-135">line 135</a>
+				 <a href="bertie-vector.js.html#sunlight-1-line-173">line 173</a>
 			</li>
 		</ul>
 	</dd>
@@ -1566,7 +1695,7 @@
             <td class="type">
             
                 
-<span class="param-type">int</span>
+<span class="param-type">float</span>
 
 
 
@@ -1590,7 +1719,7 @@
             <td class="type">
             
                 
-<span class="param-type">int</span>
+<span class="param-type">float</span>
 
 
 
@@ -1614,7 +1743,7 @@
             <td class="type">
             
                 
-<span class="param-type">int</span>
+<span class="param-type">float</span>
 
 
 
@@ -1670,7 +1799,7 @@
 		<ul class="dummy">
 			<li>
 				<a href="bertie-vector.js.html">bertie-vector.js</a>,
-				 <a href="bertie-vector.js.html#sunlight-1-line-30">line 30</a>
+				 <a href="bertie-vector.js.html#sunlight-1-line-51">line 51</a>
 			</li>
 		</ul>
 	</dd>
@@ -1758,7 +1887,7 @@
 		<ul class="dummy">
 			<li>
 				<a href="bertie-vector.js.html">bertie-vector.js</a>,
-				 <a href="bertie-vector.js.html#sunlight-1-line-61">line 61</a>
+				 <a href="bertie-vector.js.html#sunlight-1-line-92">line 92</a>
 			</li>
 		</ul>
 	</dd>

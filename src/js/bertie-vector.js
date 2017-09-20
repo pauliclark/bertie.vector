@@ -1,16 +1,25 @@
 
 (function(bertie) {
     'use strict';	
-/**
- * @type {class}
- 
-*/
 	bertie.vector = (function() {
-		class bertievector {
 /**
- * bertie.vector - Attached bertievector to the bertie class
+ * @namespace bertie
+ * 
+*/
+		class bertievector {
+			
+/**
+ * Class defining a vector in 3D space
+ * @alias bertie.vector
  * @author Paul I Clark
- * @param {array} - [x,y,z] direction coordinates
+ * @param {float} x - x direction coordinate
+ * @param {float} y - y direction coordinate
+ * @param {float} z - z direction coordinate
+ 
+ 
+ * @property {float} x - x axis travel (signed)
+ * @property {float} y - y axis travel (signed)
+ * @property {float} z - z axis travel (signed)
 */
 			constructor(...args) {
 				this.unit=null;
@@ -21,11 +30,30 @@
 					this.directions=[0,0,0];
 				}	
 			}
+			get x() {
+				return this.directions[0];
+			}
+			set x(v) {
+				this.directions[0]=v;
+			}
+			get y() {
+				return this.directions[1];
+			}
+			set y(v) {
+				this.directions[1]=v;
+			}
+			get z() {
+				return this.directions[2];
+			}
+			set z(v) {
+				this.directions[2]=v;
+			}
 /**
  * Reset the direction to these params
- * @param {int} - x direction coordinate
- * @param {int} - y direction coordinate
- * @param {int} - z direction coordinate
+ * @method bertie.vector#setDirection
+ * @param {float} x - x direction coordinate
+ * @param {float} y - y direction coordinate
+ * @param {float} z - z direction coordinate
 */
 			setDirection(x,y,z) {
 				this.directions=[x,y,z];
@@ -34,19 +62,27 @@
 			}
 /**
  * Add a difference in direction
- * @param {int} - x direction
- * @param {int} - y direction
- * @param {int} - z direction
+ * @method bertie.vector#add
+ * @param {float|vector} x|vector - x direction or another vector
+ * @param {float} y - y direction (if x is not a vector)
+ * @param {float} z - z direction (if x is not a vector)
 */
-			add(x,y,z) {
-				this.directions[0]+=x;
-				this.directions[1]+=y;
-				this.directions[2]+=z;
+			add(x, ...args) {
+				if (isNaN(x) && x instanceof bertie.vector) {
+					this.directions[0]+=x.directions[0];
+					this.directions[1]+=x.directions[1];
+					this.directions[2]+=x.directions[2];
+				}else{
+					this.directions[0]+=x;
+					if (args.length>0) this.directions[1]+=args[0];
+					if (args.length>1) this.directions[2]+=args[1];
+				}
 				this.unit=null;
 				this.lengthValue=null;
 			}
 /**
  * Get the length of the vector
+ * @method bertie.vector#getLength
  * @return {number}
 */
 			getLength() {
@@ -56,6 +92,7 @@
 /**
  * Get the unit vector
  * Divides the direction components by the length of the vector.
+ * @method bertie.vector#unitVector
  * @return {array} - [x,y,z] An array of the direction component units
 */
 			unitVector() {
@@ -68,7 +105,8 @@
 			}
 /**
  * Calculates the dot product of this and the given vector.
- * @param {vector} - Expects another Vector
+ * @method bertie.vector#dotProduct
+ * @param {vector} vector - bertie.vector object
  * @return {number|false}
 */
 			dotProduct(v) {
@@ -82,6 +120,7 @@
 			}
 /**
  * Inverts the direction of the vector
+ * @method bertie.vector#flip
 */
 			flip() {
 				this.directions[0]=-this.directions[0];
@@ -92,7 +131,8 @@
 			}
 /**
  * Calculates the angle (radians) between this and the given vector.
- * @param {vector} - Expects another Vector
+ * @method bertie.vector#angleBetween
+ * @param {vector} vector - bertie.vector object
  * @return {number|false} - The radians between this and the given vector
 */
 			angleBetween(v) {
@@ -104,7 +144,8 @@
 			}
 /**
  * Rotates the vector around the x-axis
- * @param {angle} - The radians to rotate the vector
+ * @method bertie.vector#rotateX
+ * @param {float} angle - The radians to rotate the vector
 */
 			rotateX(a) {
 				var r=[0,0,0];
@@ -117,7 +158,8 @@
 			}
 /**
  * Rotates the vector around the y-axis
- * @param {angle} - The radians to rotate the vector
+ * @method bertie.vector#rotateY
+ * @param {float} angle - The radians to rotate the vector
 */
 			rotateY(a) {
 				var r=[0,0,0];
@@ -130,7 +172,8 @@
 			}
 /**
  * Rotates the vector around the z-axis
- * @param {angle} - The radians to rotate the vector
+ * @method bertie.vector#rotateZ
+ * @param {float} angle - The radians to rotate the vector
 */
 			rotateZ(a) {
 				var r=[0,0,0];
@@ -143,7 +186,8 @@
 			}
 /**
  * Clones this vector object and return a new vector with a duplicate direction
- * @param {vector} - The clone vector
+ * @method bertie.vector#clone
+ * @return {vector} - The cloned vector
 */
 			clone() {
 				return new vector(this.directions[0],this.directions[1],this.directions[2]);
